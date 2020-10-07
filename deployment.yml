@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-django-deployment
+  labels:
+    app: testdjango
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdjango
+  template:
+    metadata:
+      labels:
+        app: testdjango
+    spec:
+      containers:
+        - name: testdjango
+          image: testdjango
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
