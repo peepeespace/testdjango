@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: testdjango
-          image: testdjango
+          image: localhost:5000/testdjango
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
